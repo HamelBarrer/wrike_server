@@ -235,4 +235,7 @@ Thumbs.db #thumbnail cache on Windows
 .history
 .ionide
 
+### api test
+api.http
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django,visualstudiocode
