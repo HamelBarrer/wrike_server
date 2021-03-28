@@ -29,3 +29,11 @@ class UserSerializer(serializers.ModelSerializer):
             email=validated_data.get('email'),
             password=make_password(validated_data.get('password'))
         )
+
+
+class UpdateUser(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            'first_name', 'last_name', 'email'
+        )
