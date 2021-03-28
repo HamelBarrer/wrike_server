@@ -8,6 +8,7 @@ from users.views import CustomToken
 urlpatterns = [
     path('auth-token/', CustomToken.as_view()),
     path('api/v1/', include('users.urls')),
+    path('api/v1/', include('profiles.urls')),
     path('admin/', admin.site.urls),
 ] + static(
     settings.MEDIA_URL, document_root=settings.MEDIA_ROOT,

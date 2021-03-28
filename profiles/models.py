@@ -11,7 +11,7 @@ from users.models import User
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=14)
-    direcction = models.CharField(max_length=80)
+    direction = models.CharField(max_length=80)
     avatar = models.ImageField(default='avatar.png', upload_to='profiles/')
     slug = models.SlugField(max_length=50, unique=True)
     created_at = models.DateTimeField(auto_now_add=timezone.now)
