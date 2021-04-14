@@ -45,6 +45,17 @@ class CreateUser(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+class ListUser(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, format=None):
+        user = User.objects.all().order_by('-pk')
+        serializer = UserSerializer(user, many=True)
+
+        return Response(serializer.data)
+
+
 class GetOrUpdateUser(APIView):
     authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
